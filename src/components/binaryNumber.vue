@@ -4,6 +4,7 @@
     props: {
         msg: Number,
         time: Number,
+        limit: Number,
         //testNumber: 0  tak nie robimy
         testNumber: {
             type: Number,
@@ -19,14 +20,25 @@
         test(){
             console.log(this.testTime)
             this.testTime+=1
+            if(this.testTime > this.limit) this.testTime = 0
             this.lightup()
         },
         lightup(){
             const boxes = this.$el.getElementsByClassName('number') // this.$el - tylko w tym komponencie
             console.log(boxes)
-            if(this.testTime % 2 == 1 && boxes[0]) boxes[0].style.backgroundColor = "white"
+            if(this.testTime % 2 == 1 && this.testTime != 0) boxes[0].style.backgroundColor = "white"
             else boxes[0].style.backgroundColor = "black"
-            // if(this.testTime >= 8 && boxes[3]) boxes[3].style.backgroundColor = "white"
+
+            if(this.testTime % 4 == 2 || this.testTime % 4 == 3) boxes[1].style.backgroundColor = "white"
+            else boxes[1].style.backgroundColor = "black"
+            // if(msg == 3){
+            if(this.testTime >= 4 && this.testTime <= 7) boxes[2].style.backgroundColor = "white"
+            else boxes[2].style.backgroundColor = "black"
+            // }
+            // if(msg == 4){
+            if(this.testTime >= 8)boxes[3].style.backgroundColor = "white"
+            else boxes[3].style.backgroundColor = "black"
+            // } 
         }
      },
     mounted() {
@@ -42,7 +54,7 @@
     <div class="number"></div>
     <div class="number" v-if="msg >= 3"></div>
     <div class="number"v-if="msg >= 4"></div>
-    
+    <p> {{ this.testTime }}</p>
 </div>
 </template>
 
@@ -54,5 +66,8 @@
         margin: 10px;
         transition: 200ms;
         border-radius: 10px;
+    }
+    p{
+        color: #fff;
     }
 </style>

@@ -8,12 +8,12 @@ let seconds = 24//time.getSeconds()
 
 <template>
   <div class="container">
-    <binary-number :msg="2" :time="hours"/>
-    <binary-number :msg="4" :time="hours"/>
-    <binary-number :msg="3" :time="minutes"/>
-    <binary-number :msg="4" :time="minutes"/>
-    <binary-number :msg="3" :time="seconds"/>
-    <binary-number :msg="4" :time="seconds"/>
+    <binary-number :msg="2" :time="hours" :limit="2"/>
+    <binary-number :msg="4" :time="hours" :limit="9"/>
+    <binary-number :msg="3" :time="minutes" :limit="5"/>
+    <binary-number :msg="4" :time="minutes" :limit="9"/>
+    <binary-number :msg="3" :time="seconds" :limit="5"/>
+    <binary-number :msg="4" :time="seconds" :limit="9"/>
   </div>
 </template>
 
