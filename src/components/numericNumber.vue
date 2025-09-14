@@ -1,5 +1,5 @@
 <script>
-    export default {
+export default {
     name: 'numeric-number',
     props: {
         hour: Number,
@@ -9,13 +9,14 @@
 }
 </script>
 <template>
-    <p> {{ hour < 10 ? '0'+hour: hour }} : {{ minutes < 10 ? '0'+minutes : minutes }} : {{ seconds < 10 ? '0' + seconds : seconds }}</p>
+    <p class="fs-1 col-12">{{ hour < 10 ? '0' + hour : hour }} : {{ minutes < 10 ? '0' + minutes : minutes }} : {{ seconds < 10 ? '0' + seconds : seconds }}</p>
 </template>
 
 <style scoped>
-    p{
-        font-size: 50px;
-        color: aliceblue;
-        text-align: center;
-    }
+p {
+    /* font-size: 50px; */
+    /* letter-spacing: 30px; */
+    color: rgb(253, 218, 58);
+    text-align: center;
+}
 </style>
