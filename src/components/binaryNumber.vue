@@ -45,9 +45,9 @@
 
 <style scoped>
     .number, .empty{
-        height: 100px;
+        aspect-ratio: 1 / 1;
         width: 100%;
-        margin: 10px;
+        margin: 1vh;
         transition: 200ms;
         border-radius: 30%;
     }
